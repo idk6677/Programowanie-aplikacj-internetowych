@@ -1,0 +1,21 @@
+body {
+    background-color: #303030FF;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+h1 {
+    color: #ff781f;
+}
+h2{
+    color: #f36742;
+}
+h3  {
+    color: #ffaf7a;
+}
+header  {
+    background-color: #1A1A1A;
+    text-align: center;
+}
+dl > dt {
+    color: #ff781f;
+}
