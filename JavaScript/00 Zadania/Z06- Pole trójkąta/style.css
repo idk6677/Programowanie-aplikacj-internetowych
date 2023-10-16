@@ -1,0 +1,23 @@
+body{
+    background-color: #364958;
+    color: #c9e4ca;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #55828B;
+}
+h2{
+    text-align: center;
+    color: #87BBA2;
+}
+#wynik {
+    border: 2px solid;
+    padding: 30px;
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+a {
+    color: #c9e4ca;
+}
