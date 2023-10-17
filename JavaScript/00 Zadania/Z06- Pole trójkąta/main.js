@@ -10,5 +10,7 @@ btn.addEventListener('click', function (){
     let c = parseInt(liczba_c.value);
 
     let p = (a + b + c) / 2;
-    let s = p * (p - a) * (p - b) * (p - c);
+    let s = Math.sqrt(p * (p - a) * (p - b) * (p - c))
+
+    wynik.innerHTML = `Pole trójkąta o bokach ${a}, ${b} i ${c} wynosi ${s}`;
 })
