@@ -1,16 +1,16 @@
 body{
-    background-color: #364958;
-    color: #c9e4ca;
+    background-color: #261824;
+    color: #D9D0C1;
     font-family: Arial, sans-serif;
 }
 
 h1 {
     text-align: center;
-    color: #55828B;
+    color: #59252E;
 }
 h2{
     text-align: center;
-    color: #87BBA2;
+    color: #8C6B68;
 }
 #wynik {
     border: 2px solid;
@@ -19,5 +19,5 @@ h2{
     margin-top: 15px;
 }
 sub {
-    color: #87BBA2;
+    color: #D9B282;
 }
