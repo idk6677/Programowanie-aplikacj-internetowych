@@ -16,5 +16,8 @@ btn.addEventListener('click', function (){
     let iloczyn = p1 * p2 * p3 * p4 * p5;
     let srednia = (p1 + p2 + p3 + p4 + p5) / 5;
 
-    wynik.innerHTML = `Wylosowane liczby: ${p1} <br> ${p2} <br> ${p3} <br> ${p4} <br> ${p5} <br>`
+    wynik.innerHTML = `Wylosowane liczby: <br> p1 = ${p1} <br> p2 = ${p2} <br> p3 = ${p3} <br> p4 = ${p4} <br> p5 = ${p5} <br>
+                        Suma liczb: ${p1} + ${p2} + ${p3} + ${p4} + ${p5} = ${suma} <br>
+                        Iloczyn liczb: ${p1} * ${p2} * ${p3} * ${p4} * ${p5} = ${iloczyn} <br>
+                        Średnia liczb: ${srednia}`
 })
