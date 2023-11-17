@@ -1,17 +1,36 @@
-function setup() {
-    createCanvas(900, 700)
-    background(234)
-}
+let angle = 0
+x = 255
+z = 50
 
-let x = 100
-let y = 100
+function setup() {
+    createCanvas(500, 500)
+    background(234)
+    angleMode(DEGREES)
+}
 
 function draw() {
-    background(234)
-    point(100, 100)
-    ellipse(x++, random(10, 100), 80, 80)
-    ellipse(200, 300, 80, 100)
-    ellipse(mouseX, mouseY, 80, 80)
+    background(51)
+
+    line(0, 20, z++, 20)
+
+    fill(x)
+    translate(100, 100)
+    rotate(angle)
+    scale(mouseX/ 100)
+    rectMode(CENTER)
+    rect(0, 0, 20, 20)
+
+    angle = angle + 1
+
 }
 
-// przeslac sam sketch
+
+function mouseClicked() {
+    if (x === 255) {
+        x =  51
+    }
+    else if (x === 51) {
+        x =  255
+    }
+}
+
