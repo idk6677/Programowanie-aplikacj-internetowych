@@ -1,12 +1,12 @@
-let angle = 0
-x = 255
-z = 50
-
 function setup() {
     createCanvas(500, 500)
     background(234)
     angleMode(DEGREES)
 }
+let angle = 0
+x = 255
+z = 50
+
 
 function draw() {
     background(51)
@@ -14,7 +14,7 @@ function draw() {
     line(0, 20, z++, 20)
 
     fill(x)
-    translate(100, 100)
+    translate(250, 250)
     rotate(angle)
     scale(mouseX/ 100)
     rectMode(CENTER)
@@ -22,8 +22,8 @@ function draw() {
 
     angle = angle + 1
 
-}
 
+}
 
 function mouseClicked() {
     if (x === 255) {
