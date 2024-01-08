@@ -9,7 +9,12 @@ btn.addEventListener('click', function (){
 
     function potegowanie(l, p){
 
-        return Math.pow(l, p);
+        let wynik = 1;
+
+        for(let i = 1; i <= p; i++){
+            wynik = wynik * l;
+        }
+        return wynik;
     }
 
     wynik.innerHTML = `x = ${l} <br>
