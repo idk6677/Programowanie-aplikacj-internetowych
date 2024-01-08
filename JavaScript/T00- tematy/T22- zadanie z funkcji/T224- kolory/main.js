@@ -10,13 +10,13 @@ btn.addEventListener('click', function (){
     function kolor(a, b){
 
         if (a > b){
-            return `${a} > ${b} <style> #a {color: red;} #b {color: green;}</style>`
+            return `<span id="wieksza">${a}</span> > <span id="mniejsza">${b}</span>`
         }
         if (a < b){
-            return `${a} > ${b} <style> #a {color: green;} #b {color: red;}</style>`
+            return `<span id="mniejsza">${a}</span> < <span id="wieksza">${b}</span>`
         }
         if (a === b){
-            return `${a} > ${b} <style> #a {color: blue;} #b {color: blue;}</style>`
+            return `<span id="rowna">${a}</span> = <span id="rowna">${b}</span>`
         }
 
     }

@@ -8,13 +8,14 @@ btn.addEventListener('click', function (){
     let b = parseInt(liczba_b.value)
 
     function wspolny_dzielnik(a, b){
-        while (a !== 0){
+
+        while (a !== b){
             if(a > b)
                 a = a - b;
             else
                 b = b - a;
         }
-        return a;
+        return b;
     }
 
         wynik.innerHTML = `Wspólnym dzielnikiem ${a} i ${b} jest ${wspolny_dzielnik(a, b)}`;
