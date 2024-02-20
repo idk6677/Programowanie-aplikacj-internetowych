@@ -1,14 +1,16 @@
 class Czolg{
-    nazwa = "Leopard";
-    kolor = "szary";
-    amunicja = 4;
+    constructor(nazwa,kolor,amunicja) {
+        this.nazwa = nazwa;
+        this.kolor = kolor;
+        this.amunicja = amunicja;
+    }
 
     info = function(){
         wynik.innerHTML = `Czołg nazywa się ${this.nazwa}. Jego kolor to ${this.kolor}. Ma ${this.amunicja} sztuk amunicji <br>`;
     }
     wystrzal = function (){
         if (this.amunicja > 0){
-            wynik.innerHTML `Strzał! <br>`;
+            wynik.innerHTML = `Strzał! <br>`;
             this.amunicja -= 1;
         }
         else {
@@ -22,9 +24,10 @@ class Czolg{
 
 }
 
-let czolg = new Czolg();
+let czolg = new Czolg("Leopard", "szary", 4);
 
 czolg.info();
 czolg.wystrzal();
 czolg.wystrzal();
 czolg.doladuj();
+czolg.info();
