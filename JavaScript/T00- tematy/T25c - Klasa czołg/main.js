@@ -5,29 +5,29 @@ class Czolg{
         this.amunicja = amunicja;
     }
 
-    info = function(){
-        wynik.innerHTML = `Czołg nazywa się ${this.nazwa}. Jego kolor to ${this.kolor}. Ma ${this.amunicja} sztuk amunicji <br>`;
+    info(){
+        return`Czołg nazywa się ${this.nazwa}. Jego kolor to ${this.kolor}. Ma ${this.amunicja} sztuk amunicji`;
     }
-    wystrzal = function (){
+    wystrzal(){
         if (this.amunicja > 0){
-            wynik.innerHTML = `Strzał! <br>`;
             this.amunicja -= 1;
+            return `Strzał!`;
         }
         else {
-            wynik.innerHTML = `Brak amunicji <br>`;
+            return `Brak amunicji`;
         }
     }
-    doladuj = function (){
+    doladuj(){
         this.amunicja += 1;
-        wynik.innerHTML = `Doładowano 1 pocisk <br>`;
+        return `Doładowano 1 pocisk`;
     }
 
 }
 
 let czolg = new Czolg("Leopard", "szary", 4);
 
-czolg.info();
-czolg.wystrzal();
-czolg.wystrzal();
-czolg.doladuj();
-czolg.info();
+wynik.innerHTML = `${czolg.info()} <br><br> ${czolg.wystrzal()} <br><br> ${czolg.wystrzal()} <br><br> ${czolg.doladuj()} <br><br> ${czolg.info()}`;
+
+
+
+
