@@ -9,6 +9,12 @@ class Punkt{
     }
 }
 
+class Odcinek{
+    constructor(){
+
+    }
+}
+
 let p = new Punkt("A", 3, 4);
 let p1= new  Punkt("B", 5, 6);
 
