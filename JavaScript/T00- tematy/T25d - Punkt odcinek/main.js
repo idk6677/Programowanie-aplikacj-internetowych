@@ -4,8 +4,8 @@ class Punkt{
         this.x = x;
         this.y = y;
     }
-    info = function (){
-        return `Nazwa punktu: ${this.nazwa}, x = ${this.x}, y = ${this.y}`;
+    info(){
+        wynik.innerHTML = `Nazwa punktu: ${this.nazwa}, x = ${this.x}, y = ${this.y}`;
     }
 }
 
