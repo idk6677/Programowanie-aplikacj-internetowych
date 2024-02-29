@@ -12,7 +12,7 @@ btn.addEventListener('click', function (){
     function wypelnij(tab){
         for (let j = 0; j < w; j++){
             for (let i = 0; i < k; i++){
-                tab[i][j] = Math.floor(Math.random() * 10);
+                tab[i][j] =  Math.floor(Math.random() * 10);
             }
         }
     }
@@ -20,7 +20,7 @@ btn.addEventListener('click', function (){
     function wyswietl(tab, p){
         for (let j = 0; j < w; j++){
             for (let i = 0; i < k; i++){
-                p += tab[i][j];
+                p += `<span id="l">${tab[i][j]}</span>`;
             }
             p += '<br>';
         }
