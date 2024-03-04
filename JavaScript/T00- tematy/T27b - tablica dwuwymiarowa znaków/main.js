@@ -42,22 +42,29 @@ btn.addEventListener('click', function (){
 
     function ile_b(tab){
         let counter = 0;
-        let w = 0;
-
-        for (let j = 0; j < w; j++){
-            for (let i = 0; i < k; i++){
-                if(tab[i][j] === 'b')
-                    counter += 1;
+        const lines = [];
+        let maxCount = 0;
+        for (let i = 0; i < w; i++) {
+            for (let j = 0; j < k; j++){
+                for (let i = 0; i < k; i++){
+                    if(tab[i][j] === 'b')
+                        counter += 1;
+                }
             }
-            w += 1;
+            if (counter > maxCount) {
+                maxCount = counter;
+                lines.length = 0;
+                lines.push(i + 1);
+            } else if (counter === maxCount) {
+                lines.push(i + 1);
+            }
         }
-        return counter;
+        return `Litera b najczęściej występuję w ${lines} wierszu`;
     }
 
     wypelnij(tab);
 
     wynik.innerHTML = `${wyswietl(tab, p)} <br>
-                        Litera a wystąpiła ${policz(tab)} razy <br>
-                        ${ile_b(tab)}`;
+                        Litera a wystąpiła ${policz(tab)} razy <br>`;
 
 })
