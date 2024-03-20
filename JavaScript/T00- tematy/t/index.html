@@ -3,111 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tablica i odwrócona tablica</title>
+    <title>Add Border to Image</title>
     <style>
-        table {
-            border-collapse: collapse;
-        }
-        td, th {
-            border: 1px solid black;
-            padding: 8px;
+        /* Define the border style */
+        .bordered {
+            /* Initial border style */
+            border: 2px solid red;
         }
     </style>
 </head>
 <body>
 
-<h2>Tablica i odwrócona tablica</h2>
+<!-- Image element -->
+<img id="myImage" src="Screenshot_20240319_140413_Instagram.webp" alt="Example Image">
 
-<div id="arrayDisplay"></div>
-<div id="maxSumRowsDisplay"></div>
-<div id="reversedArrayDisplay"></div>
+<!-- Input for selecting border color -->
+<label for="borderColor">Border Color:</label>
+<input type="color" id="borderColor" value="#ff0000">
+
+<!-- Input for selecting border width with a slider -->
+<label for="borderWidth">Border Width:</label>
+<input type="range" id="borderWidth" min="1" max="20" value="2">
+
+<!-- Button to add border -->
+<button onclick="addBorder()">Add Border</button>
 
 <script>
-    // Funkcja generująca liczbę pseudolosową z zakresu <0,1>
-    function random() {
-        return Math.floor(Math.random() * 2);
+    function addBorder() {
+        // Get the image element
+        let image = document.getElementById("myImage");
+
+        // Get selected border color
+        let borderColor = document.getElementById("borderColor").value;
+
+        // Get selected border width
+        let borderWidth = document.getElementById("borderWidth").value;
+
+        // Apply the selected border color and width
+        image.style.border = borderWidth + "px solid " + borderColor;
     }
-
-    // Funkcja tworząca dwuwymiarową tablicę o wymiarach 4x4 i wypełniająca ją liczbami pseudolosowymi z zakresu <0,1>
-    function createArray() {
-        let array = [];
-        for (let i = 0; i < 4; i++) {
-            let row = [];
-            for (let j = 0; j < 4; j++) {
-                row.push(random());
-            }
-            array.push(row);
-        }
-        return array;
-    }
-
-    // Funkcja znajdująca wiersze tablicy, w których suma liczb jest największa
-    function findMaxSumRows(array) {
-        let maxSum = 0;
-        let maxSumRows = [];
-        for (let i = 0; i < array.length; i++) {
-            let sum = array[i].reduce((acc, val) => acc + val, 0);
-            if (sum > maxSum) {
-                maxSum = sum;
-                maxSumRows = [i];
-            } else if (sum === maxSum) {
-                maxSumRows.push(i);
-            }
-        }
-        return maxSumRows;
-    }
-
-    // Funkcja tworząca "odwróconą" tablicę
-    function createReversedArray(array) {
-        let reversedArray = [];
-        for (let i = 0; i < array.length; i++) {
-            let row = [];
-            for (let j = 0; j < array.length; j++) {
-                row.push(array[j][i]);
-            }
-            reversedArray.push(row);
-        }
-        return reversedArray;
-    }
-
-    // Tworzenie tablicy
-    let array = createArray();
-
-    // Wyświetlanie tablicy
-    let arrayDisplay = document.getElementById("arrayDisplay");
-    let arrayHTML = "<h3>Tablica początkowa:</h3><table>";
-    for (let i = 0; i < array.length; i++) {
-        arrayHTML += "<tr>";
-        for (let j = 0; j < array[i].length; j++) {
-            arrayHTML += "<td>" + array[i][j] + "</td>";
-        }
-        arrayHTML += "</tr>";
-    }
-    arrayHTML += "</table>";
-    arrayDisplay.innerHTML = arrayHTML;
-
-    // Znajdowanie wierszy z największą sumą
-    let maxSumRows = findMaxSumRows(array);
-    let maxSumRowsDisplay = document.getElementById("maxSumRowsDisplay");
-    let maxSumRowsHTML = "<h3>Indeksy wierszy o największej sumie:</h3>";
-    maxSumRowsHTML += "<p>" + maxSumRows.join(", ") + "</p>";
-    maxSumRowsDisplay.innerHTML = maxSumRowsHTML;
-
-    // Tworzenie "odwróconej" tablicy
-    let reversedArray = createReversedArray(array);
-
-    // Wyświetlanie odwróconej tablicy
-    let reversedArrayDisplay = document.getElementById("reversedArrayDisplay");
-    let reversedArrayHTML = "<h3>Tablica po obróceniu o 90 stopni:</h3><table>";
-    for (let i = 0; i < reversedArray.length; i++) {
-        reversedArrayHTML += "<tr>";
-        for (let j = 0; j < reversedArray[i].length; j++) {
-            reversedArrayHTML += "<td>" + reversedArray[i][j] + "</td>";
-        }
-        reversedArrayHTML += "</tr>";
-    }
-    reversedArrayHTML += "</table>";
-    reversedArrayDisplay.innerHTML = reversedArrayHTML;
 </script>
 
 </body>
