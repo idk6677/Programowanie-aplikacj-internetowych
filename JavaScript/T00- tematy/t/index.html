@@ -3,46 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Border to Image</title>
-    <style>
-        /* Define the border style */
-        .bordered {
-            /* Initial border style */
-            border: 2px solid red;
-        }
-    </style>
+    <title>Szachownica</title>
 </head>
 <body>
-
-<!-- Image element -->
-<img id="myImage" src="Screenshot_20240319_140413_Instagram.webp" alt="Example Image">
-
-<!-- Input for selecting border color -->
-<label for="borderColor">Border Color:</label>
-<input type="color" id="borderColor" value="#ff0000">
-
-<!-- Input for selecting border width with a slider -->
-<label for="borderWidth">Border Width:</label>
-<input type="range" id="borderWidth" min="1" max="20" value="2">
-
-<!-- Button to add border -->
-<button onclick="addBorder()">Add Border</button>
+<div id="container"></div>
+<form>
+    <label for="size">Podaj liczbę kolumn:</label>
+    <input type="number" id="size" name="size" min="1">
+    <button type="button" onclick="generateChessboard()">Generuj szachownicę</button>
+</form>
 
 <script>
-    function addBorder() {
-        // Get the image element
-        let image = document.getElementById("myImage");
+    function generateChessboard() {
+        var container = document.getElementById('container');
+        container.innerHTML = ''; // Czyszczenie zawartości kontenera
 
-        // Get selected border color
-        let borderColor = document.getElementById("borderColor").value;
+        var size = parseInt(document.getElementById('size').value);
 
-        // Get selected border width
-        let borderWidth = document.getElementById("borderWidth").value;
+        if (isNaN(size) || size < 1) {
+            alert("Podaj poprawną liczbę kolumn.");
+            return;
+        }
 
-        // Apply the selected border color and width
-        image.style.border = borderWidth + "px solid " + borderColor;
+        for (var i = 0; i < size; i++) {
+            var row = document.createElement('div');
+            row.style.display = 'flex';
+            row.style.width = '100%';
+            container.appendChild(row);
+
+            for (var j = 0; j < size; j++) {
+                var cell = document.createElement('div');
+                cell.style.width = 'calc(100% / ' + size + ')';
+                cell.style.paddingBottom = 'calc(100% / ' + size + ')';
+                cell.style.backgroundColor = (i + j) % 2 === 0 ? 'black' : 'white';
+                row.appendChild(cell);
+            }
+        }
     }
 </script>
-
 </body>
 </html>
