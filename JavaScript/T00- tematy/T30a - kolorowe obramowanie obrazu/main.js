@@ -1,12 +1,13 @@
-let container_div = document.querySelector('.container')
-let btn = document.querySelector('button')
-let img = document.querySelector('img')
+const btn = document.querySelector('button')
+const zdj = document.querySelector('#b_img')
+const kolor = document.querySelector('#b_color')
+const szerokosc = document.querySelector('#b_width')
+
 btn.addEventListener('click', function (){
 
-    color = document.querySelector('#color')
-    width = document.querySelector('#suwak')
+    let k = kolor.value;
+    let sz = szerokosc.value;
 
-    img.style.borderColor = color;
-    img.style.borderWidth = width;
+    zdj.style.border = sz + "px solid" + k;
 
 })
