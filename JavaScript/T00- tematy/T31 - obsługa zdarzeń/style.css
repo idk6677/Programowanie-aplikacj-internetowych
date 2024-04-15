@@ -1,6 +1,21 @@
-div {
+body{
     background-color: #534378;
-    height: 300px;
-    width: 500px;
-    color: #c9e4ca;
+    color: #C1ADDE;
+    font-family: Arial, sans-serif;
+}
+h1 {
+    text-align: center;
+    color: #261C33;
+}
+h2{
+    text-align: center;
+    color: #372447;
+}
+div {
+    background-color: #372447;
+    border: 2px solid;
+    padding: 30px;
+    font-size: 1.5rem;
+    margin-top: 15px;
+    text-align: center;
 }
