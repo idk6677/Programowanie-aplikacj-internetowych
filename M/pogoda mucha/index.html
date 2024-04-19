@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikacja Pogodowa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Aplikacja Pogodowa</h2>
+
+<input type="text" id="cityInput" placeholder="Wprowadź nazwę miasta">
+
+<button onclick="getWeather()">Sprawdź pogodę</button>
+
+<p id="weatherInfo"></p>
+
+<script>
+    function getWeather() {
+        var city = document.getElementById("cityInput").value;
+        var apiKey = "5548dc3776887cd60acb44353f9daf3a"; // Zastąp YOUR_API_KEY kluczem API z OpenWeatherMap
+        var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric";
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.cod === 200) {
+                    var weatherDescription = data.weather[0].description;
+                    var temperature = data.main.temp;
+                    var humidity = data.main.humidity;
+                    var weatherInfo = "Warunki pogodowe w " + city + ": <br>" + weatherDescription + "<br>Temperatura: " + temperature + "°C<br>Wilgotność: " + humidity + "%";
+                    document.getElementById("weatherInfo").innerHTML = weatherInfo;
+                } else {
+                    document.getElementById("weatherInfo").innerHTML = "Nie można pobrać danych pogodowych.";
+                }
+            })
+            .catch(error => {
+                console.error('Błąd podczas pobierania danych:', error);
+                document.getElementById("weatherInfo").innerHTML = "Wystąpił błąd. Spróbuj ponownie później.";
+            });
+    }
+</script>
+
+</body>
+</html>

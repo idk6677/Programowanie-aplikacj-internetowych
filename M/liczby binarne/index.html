@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabliczka mnożenia 9x9</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<label for="evenColor">Wybierz kolor dla liczb parzystych:</label>
+<input type="color" id="evenColor" name="evenColor" value="#0000ff">
+
+<label for="oddColor">Wybierz kolor dla liczb nieparzystych:</label>
+<input type="color" id="oddColor" name="oddColor" value="#ff0000">
+
+<table>
+    <caption>Tabliczka mnożenia 9x9</caption>
+    <thead>
+    <tr>
+        <th>&times;</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+    </tr>
+    </thead>
+    <tbody id="multiplicationTableBody">
+    <!-- JavaScript do generowania tablicy mnożenia -->
+    <script>
+        // Funkcja do sprawdzania czy liczba jest parzysta
+        function isEven(number) {
+            return number % 2 === 0;
+        }
+
+        // Funkcja do ustawiania koloru tekstu dla liczb parzystych i nieparzystych
+        function setNumberColor(evenColor, oddColor) {
+            var tdElements = document.querySelectorAll('td');
+            for (var i = 0; i < tdElements.length; i++) {
+                var number = parseInt(tdElements[i].innerText);
+                if (isEven(number)) {
+                    tdElements[i].style.color = evenColor;
+                } else {
+                    tdElements[i].style.color = oddColor;
+                }
+            }
+        }
+
+        // Początkowe ustawienie koloru tekstu dla liczb parzystych i nieparzystych
+        setNumberColor(document.getElementById('evenColor').value, document.getElementById('oddColor').value);
+
+        // Funkcja wywoływana przy zmianie koloru w polu wyboru
+        document.getElementById('evenColor').addEventListener('input', function() {
+            setNumberColor(this.value, document.getElementById('oddColor').value);
+        });
+        document.getElementById('oddColor').addEventListener('input', function() {
+            setNumberColor(document.getElementById('evenColor').value, this.value);
+        });
+    </script>
+    <!-- JavaScript do generowania tablicy mnożenia -->
+    <script>
+        // Pętla generująca wiersze tablicy
+        for (var i = 1; i <= 9; i++) {
+            document.write('<tr>');
+            document.write('<th>' + i + '</th>');
+
+            // Pętla generująca komórki w każdym wierszu
+            for (var j = 1; j <= 9; j++) {
+                // Obliczenie wartości komórki
+                document.write('<td>' + (i * j) + '</td>');
+            }
+
+            document.write('</tr>');
+        }
+    </script>
+    </tbody>
+</table>
+</body>
+</html>
