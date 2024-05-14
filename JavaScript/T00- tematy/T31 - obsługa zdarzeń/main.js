@@ -5,7 +5,7 @@ function data(){
 }
 
 function text(){
-    d.innerHTML = `Data już była`;
+    d.innerHTML = `Data już była ;)`;
 }
 
 d.addEventListener('mouseover', data);
