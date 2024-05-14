@@ -1,0 +1,13 @@
+body{
+    background-color: #534378;
+    font-family: Arial, sans-serif;
+}
+
+header > h1 {
+    text-align: center;
+    color: #261C33;
+}
+header > h2{
+    text-align: center;
+    color: #372447;
+}

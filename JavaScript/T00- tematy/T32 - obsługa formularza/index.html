@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zmiana koloru nagłówka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Zadanie T32</h1>
+    <h2>Autor: Kaja Biczkowska 2p</h2>
+    <hr>
+</header>
+
+<h1>Ustalenie wartości za pomocą suwaka</h1>
+<h2>Komponent "range"</h2>
+
+<label for="datePicker">data wykonania usługi</label>
+<input type="date" id="datePicker">
+<br><br>
+
+<label for="rangeSlider">Poziom zadowolenia obsługą w skali od 0 do 15</label>
+<input type="range" id="rangeSlider" min="0" max="15" step="1">
+<span id="rangeValue">0</span>
+<br><br>
+
+<label for="colorPicker">Ocena kolorem: </label>
+<input type="color" id="colorPicker">
+<br><br>
+
+<button>Działaj</button>
+
+<p>Usługę wykonano: <span id="dateResult">--</span></p>
+<p>Ocena klienta: <span id="rangeResult">--</span></p>
+<p>Ocena kolorem: <span id="colorResult">ocena kolorem</span></p>
+
+<script src="main.js"></script>
+</body>
+</html>
