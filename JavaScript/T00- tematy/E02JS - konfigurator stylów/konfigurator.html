@@ -1,11 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Style w JavaScript</title>
     <link rel="stylesheet" href="styl6.css">
 </head>
 <body>
+<div id="lewy_blok">
+
+    <h1>Konfigurator stylu</h1>
+
+    <p>Podaj kolor tła</p>
+    <button id="indigo">Indigo</button>
+    <button id="steelblue">SteelBlue</button>
+    <button id="olive">Olive</button>
+
+    <p>Podaj kolor czcionki</p>
+    <select>
+        <option>White</option>
+        <option>Tan</option>
+        <option>Bisque</option>
+        <option>Plum</option>
+    </select>
+
+    <p>Podaj rozmiar czcionki w procentach, np. 200%</p>
+    <label for="rozmiar"></label>
+    <input type="text" id="rozmiar" value="100%">
+
+    <p>Czy rysunek ma mieć ramkę?</p>
+    <input type="checkbox" checked id="check">
+    <label for="check">Rysuj ramkę</label>
+
+    <p>Jaki jest typ punktora listy?</p>
+    <div id="radio">
+        <label for="dysk">Dysk</label>
+        <input type="radio" id="dysk">
+        <label for="kwadrat">Kwadrat</label>
+        <input type="radio" id="kwadrat">
+        <label for="okrag">Okrąg</label>
+        <input type="radio" id="okrag">
+    </div>
+
+</div>
+
+<div id="prawy_blok">
+
+    <img src="gibraltar.jpg" alt="Półwysep Gibraltar">
+
+    <ul>
+        <li>element 1</li>
+        <li>element 2</li>
+        <li>element 3</li>
+    </ul>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+
+</div>
+
+<footer>
+    <p>Autor: Kaja Biczkowska</p>
+</footer>
+
+<script src="main.js"></script>
 
 </body>
 </html>

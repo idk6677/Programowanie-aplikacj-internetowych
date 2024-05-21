@@ -1,0 +1,44 @@
+*{
+    font-family: Georgia, sans-serif;
+}
+#lewy_blok{
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 30%;
+    float: left;
+}
+#prawy_blok{
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 70%;
+    float: right;
+}
+footer{
+    background-color: dimgray;
+    color: white;
+}
+img{
+    float: left;
+    padding: 10px;
+    border: solid 1px white;
+}
+ul{
+    display: inline-block;
+}
+#prawy_blok > p{
+    clear: both;
+}
+p{
+    padding: 10px;
+}
+#indigo{
+    background-color: indigo;
+}
+#steelblue{
+    background-color: steelblue;
+}
+#olive{
+    background-color: olive;
+}
